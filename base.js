@@ -1,0 +1,99 @@
+/**
+ * Created with JetBrains WebStorm.
+ * User: xadillax
+ * Date: 7/14/13
+ * Time: 9:13 PM
+ * Base of NBUT Vitrual Judge Core Module.
+ */
+var util = require("util");
+var EventEmitter = require("events").EventEmitter;
+var log4js = require("log4js");
+var logLevel = "INFO";
+var userAgent = "NBUT Virtual Judge Core Module Spider";
+
+function vjcorebase(baseurl) {
+    /** Some variable */
+    this.spider = require("nodegrass");
+    this.logger = undefined;
+
+    this.baseurl = baseurl;
+    this.name = "";
+    this.cookies = "";
+}
+
+util.inherits(vjcorebase, EventEmitter);
+
+/**
+ * The login function
+ * Will be called when it needs log in.
+ */
+vjcorebase.prototype.login = function(username, password, callback) {
+}
+
+/**
+ * The submission function
+ * Will be called when it needs submit code
+ * @param problemID
+ * @param language
+ * @param code
+ * @param baseheader
+ * @param callback
+ */
+vjcorebase.prototype.submit = function(problemID, language, code, baseheader, callback) {
+}
+
+/**
+ * View the last submission of one virtual judge account
+ * Will be called when it needs query
+ * @param username
+ * @param callback
+ */
+vjcorebase.prototype.result = function(username, baseheader, callback) {
+}
+
+/**
+ * Get the CE record information
+ * @param username
+ * @param runid
+ * @param baseheader
+ * @param baseresult
+ * @param callback
+ */
+vjcorebase.prototype.ceinfo = function(username, runid, baseheader, baseresult, callback) {
+}
+
+/**
+ * Set the user agent of spider.
+ * @param agent
+ */
+vjcorebase.prototype.setUserAgent = function(agent) {
+    userAgent = agent;
+}
+
+/**
+ * Get the user agent of spider.
+ * @returns {string}
+ */
+vjcorebase.prototype.getUserAgent = function() {
+    return userAgent;
+}
+
+/**
+ * Set the logger level.
+ * [ TRACE, DEBUG, INFO, WARN, ERROR, FATAL ]
+ * @param level
+ */
+exports.setLogLevel = function(level) {
+    logLevel = level;
+}
+
+exports.util = require("./lib/util");
+exports.core = vjcorebase;
+exports.logger = function(name, level) {
+    if(level === undefined) level = logLevel;
+
+    var logger = log4js.getLogger(name);
+    logger.setLevel(level);
+
+    return logger;
+}
