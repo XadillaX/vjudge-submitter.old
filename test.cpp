@@ -50,7 +50,7 @@ __int64 initans(area* a, int num[], int times[])
 int main()
 {
     //freopen("data.in", "r", stdin);
-    int dn, tmp, q, l, r;
+    int n, tmp, q, l, r;
     int num[100005];
     int times[100005];
     area* atmp;
