@@ -7,8 +7,11 @@
  */
 require("nbut-vj-core/base").setLogLevel("TRACE");
 
+/**
+ * NBUT OJ TESTER
+ * @type {nbut}
+ */
 var nbut = require("nbut-vj-core/oj/nbut").create();
-
 nbut.login("username", "password", function(status, msg, baseheader) {
     if(!status) return;
 
@@ -27,4 +30,20 @@ nbut.login("username", "password", function(status, msg, baseheader) {
             });
         });
     });
+});
+
+/**
+ * NYIST OJ TESTER
+ * @type {*}
+ */
+var nyist = require("nbut-vj-core/oj/nyist").create();
+nyist.login("username", "password", function(status, msg, baseheader) {
+    if(!status) return;
+
+    var code = "#include<iostream>\nusing namespace std;\nint main()\n{\nint a,b;\ncin>>a>>b;\ncout<<a+b<<endl;\n}";
+    this.submit(1, "C++", code, baseheader, function(status, msg, baseheader) {
+        this.result("XadillaX", baseheader, function(status, msg, result) {
+            console.log(result);
+        });
+    })
 });
