@@ -29,3 +29,32 @@ A test code for NBUTOJ.
 #### test.js
 
 You can run it to test this core module.
+
+## How To Build Up The Tester Project
+
+You should make a new directory:
+
+    mkdir vjproject
+    cd vjproject
+
+And then make the `node_modules` folder:
+
+    mkdir node_modules
+    cd node_modules
+
+Clone the repo:
+
+    git clone git@github.com:XadillaX/nbut-vjudger-module.git
+
+You will see a new repo directory nbut-vjudger-module. You should rename it:
+
+    mv nbut-vjudger-module nbut-vj-core
+
+Then copy the test files to the project root directory:
+
+    cp test* ../../
+    cd ../../
+
+Finally you can run the command below to test this project:
+
+    node test.js
