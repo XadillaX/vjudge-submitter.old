@@ -79,6 +79,41 @@ vjcorebase.prototype.getUserAgent = function() {
 }
 
 /**
+ * Format each OJ's result string
+ * @param resultString
+ * @returns {string}
+ */
+vjcorebase.prototype.formatResult = function(resultString) {
+    return "";
+}
+
+vjcorebase.prototype.getBaseHeader = function(postdata, ext) {
+    var header = {
+        "content-type"      : "application/x-www-form-urlencoded",
+        "content-length"    : 0,
+        "user-agent"        : this.getUserAgent()
+    };
+
+    if(typeof(postdata) === "int") {
+        header["content-length"] = postdata;
+    } else if(typeof(postdata) === "string") {
+        header["content-length"] = postdata.length;
+    } else if(typeof(postdata) === "object") {
+        header["content-length"] = exports.util.getDataLength(postdata);
+    } else if(postdata === undefined) {
+        header["content-length"] = 0;
+    }
+
+    if(typeof(ext) === "object") {
+        for(ele in ext) {
+            header[ele] = ext[ele];
+        }
+    }
+
+    return header;
+}
+
+/**
  * Set the logger level.
  * [ TRACE, DEBUG, INFO, WARN, ERROR, FATAL ]
  * @param level

@@ -29,8 +29,8 @@ exports.create = function(baseurl) {
 function nbut(baseurl) {
     base.core.call(this);
 
-    this.name = "NOJ";
-    this.logger = base.logger("NOJ");
+    this.name = "NBUT";
+    this.logger = base.logger("NBUT");
     if(undefined === baseurl) {
         this.baseurl = "http://acm.nbut.edu.cn/";
     }
@@ -92,6 +92,7 @@ nbut.prototype.login = function(username, password, callback) {
              *                             13:10 < olalonde> foo (a, b fn) { fn = fn.bind(this); …. }
              */
             if(callback !== undefined) callback.bind(par)(s, msg, baseheader);
+            return;
         } else {
             par.logger.error("Failed while logging in: " + data + ".");
 
@@ -100,10 +101,12 @@ nbut.prototype.login = function(username, password, callback) {
             var baseheader = { "content-length" : 0, "user-agent" : par.getUserAgent() };
 
             if(callback !== undefined) callback.bind(par)(s, msg, baseheader);
+            return;
         }
     }, header, data, "utf8").on("error", function(e){
         par.logger.error("Failed while logging in: " + e.message + ".");
         if(callback !== undefined) callback.bind(par)(false, e.message, { "content-length" : 0, "user-agent" : par.getUserAgent() });
+        return;
     });
 }
 
@@ -176,6 +179,30 @@ nbut.prototype.submit = function(problemID, language, code, baseheader, callback
     });
 }
 
+nbut.prototype.formatResult = function(resultString) {
+    var result = "";
+    for(var i = 0; i < resultString.length; i++) {
+        if(i === 0) {
+            result += resultString[i];
+            continue;
+        }
+
+        if(resultString[i] === "_") {
+            result += " ";
+            continue;
+        }
+
+        if(resultString[i - 1] === "_") {
+            result += resultString[i];
+            continue;
+        }
+
+        result += resultString[i].toLowerCase();
+    }
+
+    return result;
+}
+
 /**
  * Override and ignore the base
  * @param username
@@ -192,6 +219,14 @@ nbut.prototype.result = function(username, baseheader, callback) {
     setTimeout(queryResultRound, 1000, 1, this, username, header, url, "", callback);
 }
 
+/**
+ * Override and ignore the base
+ * @param username
+ * @param runid
+ * @param baseheader
+ * @param baseresult
+ * @param callback
+ */
 nbut.prototype.ceinfo = function(username, runid, baseheader, baseresult, callback) {
     var url = this.baseurl + "problem/viewce.xhtml?submitid=" + runid;
 
@@ -359,7 +394,9 @@ function queryResultRound(time, self, username, header, url, lastError, callback
          * Though it's succeed, the return value is false but the message is the status.
          */
         if(result["result"] === "QUEUING" || result["result"] === "COMPILING" || result["result"] === "RUNNING") {
-            loggerStr = loggerStr + " [ Record is still in pending : " + result["result"] + " ]";
+            result["finalresult"] = self.formatResult(result["result"]);
+
+            loggerStr = loggerStr + " [ Record is still in pending : " + result["finalresult"] + " ]";
             self.logger.info(loggerStr);
             setTimeout(queryResultRound, 1000, time + 1, self, username, header, url, "Record is still in pending", callback);
 
@@ -421,6 +458,7 @@ function queryResultRound(time, self, username, header, url, lastError, callback
         /**
          * Whether it's CE record
          */
+        result["finalresult"] = self.formatResult(result["result"]);
         if(result["result"] === "COMPILATION_ERROR") {
             self.ceinfo(username, result["runid"], header, result, callback);
             return;
