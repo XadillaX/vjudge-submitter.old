@@ -179,6 +179,11 @@ nbut.prototype.submit = function(problemID, language, code, baseheader, callback
     });
 }
 
+/**
+ * Override and ignore the base
+ * @param resultString
+ * @returns {string}
+ */
 nbut.prototype.formatResult = function(resultString) {
     var result = "";
     for(var i = 0; i < resultString.length; i++) {

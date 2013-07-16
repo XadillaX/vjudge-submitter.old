@@ -87,6 +87,12 @@ vjcorebase.prototype.formatResult = function(resultString) {
     return "";
 }
 
+/**
+ * Get the very beginning base header
+ * @param postdata
+ * @param ext
+ * @returns {{content-type: string, content-length: number, user-agent: string}}
+ */
 vjcorebase.prototype.getBaseHeader = function(postdata, ext) {
     var header = {
         "content-type"      : "application/x-www-form-urlencoded",

@@ -225,6 +225,11 @@ nyist.prototype.submit = function(problemID, language, code, baseheader, callbac
     });
 }
 
+/**
+ * Override and ignore the base
+ * @param resultString
+ * @returns {string}
+ */
 nyist.prototype.formatResult = function(resultString) {
     /**
      * Accepted:    <img src="img/accepted.gif"/>Accepted
