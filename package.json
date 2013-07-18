@@ -1,0 +1,27 @@
+{
+  "name": "nbut-vj-core",
+  "version": "0.0.0",
+  "description": "NBUT VJ Submitter",
+  "main": "index.js",
+  "dependencies": {
+    "log4js": "~0.6.6",
+    "nodegrass": "~0.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/XadillaX/nbut-vjudger-module.git"
+  },
+  "keywords": [
+    "VJ",
+    "Submitter"
+  ],
+  "author": "XadillaX",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/XadillaX/nbut-vjudger-module/issues"
+  }
+}
