@@ -8,7 +8,7 @@
 var util = require("util");
 var EventEmitter = require("events").EventEmitter;
 var log4js = require("log4js");
-var logLevel = "INFO";
+var logLevel = "TRACE";
 var userAgent = "NBUT Virtual Judge Core Module Spider";
 
 function vjcorebase(baseurl) {
@@ -131,6 +131,7 @@ exports.setLogLevel = function(level) {
 exports.util = require("./lib/util");
 exports.core = vjcorebase;
 exports.logger = function(name, level) {
+    if(name === undefined) name = "GLOBAL";
     if(level === undefined) level = logLevel;
 
     var logger = log4js.getLogger(name);

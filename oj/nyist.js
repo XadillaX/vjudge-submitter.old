@@ -154,7 +154,7 @@ nyist.prototype.submit = function(problemID, language, code, baseheader, callbac
     pheader["content-length"] = base.util.getDataLength(data);
     pheader["content-type"] = "application/x-www-form-urlencoded";
 
-    this.logger.info("Submit code to NOJ: [ " + url + " ]...");
+    this.logger.info("Submit code to NYIST: [ " + url + " ]...");
     this.logger.trace("Querystring: [ " + base.util.stringifyData(data) + " ]...");
     this.logger.trace("Request header: [ " + JSON.stringify(pheader) + " ]...");
 

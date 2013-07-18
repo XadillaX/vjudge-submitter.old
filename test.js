@@ -5,13 +5,14 @@
  * Time: 9:43 PM
  * Main tester.
  */
-require("nbut-vj-core/base").setLogLevel("TRACE");
+var vj = require("nbut-vj-core");
+vj.setDefaultLogLevel("TRACE");
 
 /**
  * NBUT OJ TESTER
  * @type {nbut}
  */
-var nbut = require("nbut-vj-core/oj/nbut").create();
+var nbut = vj.getSubmitter("nbut");
 nbut.login("username", "password", function(status, msg, baseheader) {
     if(!status) return;
 
@@ -36,7 +37,7 @@ nbut.login("username", "password", function(status, msg, baseheader) {
  * NYIST OJ TESTER
  * @type {*}
  */
-var nyist = require("nbut-vj-core/oj/nyist").create();
+var nyist = vj.getSubmitter("nyist");
 nyist.login("username", "password", function(status, msg, baseheader) {
     if(!status) return;
 
@@ -47,3 +48,7 @@ nyist.login("username", "password", function(status, msg, baseheader) {
         });
     })
 });
+
+if(nbut === vj.INVALID_SUBMITTER) {
+    console.log("abc");
+}
