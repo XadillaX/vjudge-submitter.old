@@ -302,7 +302,7 @@ nbut.prototype.ceinfo = function(username, runid, baseheader, baseresult, callba
  * @param callback
  */
 function queryResultRound(time, self, username, header, url, lastError, callback) {
-    const maxTryTime = 30;
+    const maxTryTime = base.MAX_TRY_TIME_OF_GETTING_RESULT;
     if(time > maxTryTime) {
         self.logger.error("Can't get the result: failed after " + maxTryTime + " times.");
         if(callback !== undefined) {

@@ -8,6 +8,27 @@
 var vj = require("nbut-vj-core");
 vj.setDefaultLogLevel("TRACE");
 
+var sysu = vj.getSubmitter("sysu");
+sysu.login("username", "password", function(status, msg, baseheader) {
+    if(!status) return;
+
+    var code = "#include<iostream>\n\
+        using namespace std;\n\
+        int main()\n\
+        {\n\
+            int a,b;\n\
+            cin>>a>>b;\n\
+            cout<<a-b<<endl;\n\
+        }";
+
+    this.submit(1000, "C++", code, baseheader, function(status, msg, baseheader) {
+        this.result("username", baseheader, function(status, msg, result) {
+            //console.log(result);
+            this.logger.info("------ The result is " + result["finalresult"]);
+        });
+    });
+});
+
 /**
  * NBUT OJ TESTER
  * @type {nbut}
@@ -25,9 +46,10 @@ nbut.login("username", "password", function(status, msg, baseheader) {
         nbut.submit(1457, "C++", code, baseheader, function(status, msg, baseheader) {
             if(!status) return;
 
-            this.result("XadillaX", baseheader, function(status, msg, result) {
+            this.result("username", baseheader, function(status, msg, result) {
                 if(!status) return;
-                console.log(result);
+                this.logger.info("------ The result is " + result["finalresult"]);
+                //console.log(result);
             });
         });
     });
@@ -43,12 +65,16 @@ nyist.login("username", "password", function(status, msg, baseheader) {
 
     var code = "#include<iostream>\nusing namespace std;\nint main()\n{\nint a,b;\ncin>>a>>b;\ncout<<a+b<<endl;\n}";
     this.submit(1, "C++", code, baseheader, function(status, msg, baseheader) {
-        this.result("XadillaX", baseheader, function(status, msg, result) {
-            console.log(result);
+        this.result("username", baseheader, function(status, msg, result) {
+            //console.log(result);
+            this.logger.info("------ The result is " + result["finalresult"]);
         });
     })
 });
 
-if(nbut === vj.INVALID_SUBMITTER) {
-    console.log("abc");
+var foo = vj.getSubmitter("foo");
+foo.login("foo", "bar", function(s, m, b) {  });
+
+if(foo === vj.INVALID_SUBMITTER) {
+    vj.logger.warn("foo is an INVALID SUBMITTER.");
 }

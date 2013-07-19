@@ -84,7 +84,7 @@ vjcorebase.prototype.getUserAgent = function() {
  * @returns {string}
  */
 vjcorebase.prototype.formatResult = function(resultString) {
-    return "";
+    return resultString;
 }
 
 /**
@@ -139,3 +139,5 @@ exports.logger = function(name, level) {
 
     return logger;
 }
+
+exports.MAX_TRY_TIME_OF_GETTING_RESULT = 30;

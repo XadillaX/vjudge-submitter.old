@@ -350,7 +350,7 @@ nyist.prototype.ceinfo = function(username, runid, baseheader, baseresult, callb
  * @param callback
  */
 function queryResultRound(time, self, username, header, url, lastError, callback) {
-    const maxTryTime = 30;
+    const maxTryTime = base.MAX_TRY_TIME_OF_GETTING_RESULT;
     if(time > maxTryTime) {
         self.logger.error("Can't get the result: failed after " + maxTryTime + " times.");
         if(callback !== undefined) {
@@ -400,7 +400,7 @@ function queryResultRound(time, self, username, header, url, lastError, callback
             reslast === -1 || timefirst === -1 || timelast === -1 || memofirst === -1 || memolast === -1) {
             loggerStr = loggerStr + " [ Received invalid data ]";
             self.logger.error(loggerStr);
-            setTImeout(queryResultRound, 1000, time + 1, self, username, header, url, "Received invalid data", callback);
+            setTimeout(queryResultRound, 1000, time + 1, self, username, header, url, "Received invalid data", callback);
             return;
         }
 
