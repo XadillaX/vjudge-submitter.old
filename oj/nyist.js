@@ -201,7 +201,7 @@ nyist.prototype.submit = function(problemID, language, code, baseheader, callbac
             if(query["msg"] === "已提交") {
                 var msg = "";
                 var s = true;
-                par.logger.info("Submitted successfully.");
+                par.logger.info("Submit successfully.");
                 if(callback !== undefined) {
                     callback.bind(par)(s, msg, baseheader);
                 }

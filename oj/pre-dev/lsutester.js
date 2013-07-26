@@ -135,6 +135,7 @@ spider.post("http://acms.lsu.edu.cn:81/OnlineJudge/login?action=login", function
                 base.logger.info("提交成功");
             } else {
                 base.logger.error("提交失败");
+                console.log(data);
                 return;
             }
 

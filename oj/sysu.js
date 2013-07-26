@@ -191,7 +191,7 @@ sysu.prototype.submit = function(problemID, language, code, baseheader, callback
         if(result["success"] === 1) {
             var msg = "";
             var s = true;
-            par.logger.info("Submitted successfully.");
+            par.logger.info("Submit successfully.");
             if(callback !== undefined) {
                 callback.bind(par)(s, msg, nbaseheader);
             }

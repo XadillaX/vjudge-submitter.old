@@ -162,7 +162,7 @@ nbut.prototype.submit = function(problemID, language, code, baseheader, callback
             s = false;
             msg = result["info"];
         } else {
-            par.logger.info("Submitted successfully.");
+            par.logger.info("Submit successfully.");
             s = true;
             msg = "";
         }

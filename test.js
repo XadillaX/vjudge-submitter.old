@@ -6,10 +6,36 @@
  * Main tester.
  */
 var vj = require("nbut-vj-core");
-vj.setDefaultLogLevel("TRACE");
+vj.setDefaultLogLevel("INFO");
+
+var username = "username";
+var password = "password";
+
+var lsu = vj.getSubmitter("lsu");
+lsu.login(username, password, function(status, msg, baseheader) {
+    if(!status) return;
+
+    var code = '#include "stdio.h"\n\
+        int main()\n\
+        {\n\
+            int a,b;\n\
+            scanf("%d %d",&a, &b);\n\
+            printf("%d\\n",a+b);\n\
+            return 0;\n\
+        } ';
+
+    this.submit(1000, "C", code, baseheader, function(status, msg, baseheader) {
+        if(!status) return;
+
+        this.result(username, baseheader, function(status, msg, result) {
+            //console.log(result);
+            this.logger.info("------ The result is " + result["finalresult"]);
+        });
+    });
+});
 
 var sysu = vj.getSubmitter("sysu");
-sysu.login("username", "password", function(status, msg, baseheader) {
+sysu.login(username, password, function(status, msg, baseheader) {
     if(!status) return;
 
     var code = "#include<iostream>\n\
@@ -22,7 +48,7 @@ sysu.login("username", "password", function(status, msg, baseheader) {
         }";
 
     this.submit(1000, "C++", code, baseheader, function(status, msg, baseheader) {
-        this.result("username", baseheader, function(status, msg, result) {
+        this.result(username, baseheader, function(status, msg, result) {
             //console.log(result);
             this.logger.info("------ The result is " + result["finalresult"]);
         });
@@ -34,7 +60,7 @@ sysu.login("username", "password", function(status, msg, baseheader) {
  * @type {nbut}
  */
 var nbut = vj.getSubmitter("nbut");
-nbut.login("username", "password", function(status, msg, baseheader) {
+nbut.login(username, password, function(status, msg, baseheader) {
     if(!status) return;
 
     var fs = require("fs");
@@ -46,7 +72,7 @@ nbut.login("username", "password", function(status, msg, baseheader) {
         nbut.submit(1457, "C++", code, baseheader, function(status, msg, baseheader) {
             if(!status) return;
 
-            this.result("username", baseheader, function(status, msg, result) {
+            this.result(username, baseheader, function(status, msg, result) {
                 if(!status) return;
                 this.logger.info("------ The result is " + result["finalresult"]);
                 //console.log(result);
@@ -60,12 +86,12 @@ nbut.login("username", "password", function(status, msg, baseheader) {
  * @type {*}
  */
 var nyist = vj.getSubmitter("nyist");
-nyist.login("username", "password", function(status, msg, baseheader) {
+nyist.login(username, password, function(status, msg, baseheader) {
     if(!status) return;
 
     var code = "#include<iostream>\nusing namespace std;\nint main()\n{\nint a,b;\ncin>>a>>b;\ncout<<a+b<<endl;\n}";
     this.submit(1, "C++", code, baseheader, function(status, msg, baseheader) {
-        this.result("username", baseheader, function(status, msg, result) {
+        this.result(username, baseheader, function(status, msg, result) {
             //console.log(result);
             this.logger.info("------ The result is " + result["finalresult"]);
         });
