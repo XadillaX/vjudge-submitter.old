@@ -34,38 +34,40 @@ You can run it to test this core module.
 
 You should make a new directory:
 
-````bash
-    mkdir vjproject
-    cd vjproject
-````bash
+```bash
+$ mkdir vjproject
+$ cd vjproject
+```
 
 And then make the `node_modules` folder:
 
-````bash
-    mkdir node_modules
-    cd node_modules
-````bash
+```bash
+$ mkdir node_modules
+$ cd node_modules
+```
 
 Clone the repo:
 
-````bash
-    git clone git@github.com:XadillaX/vjudge-submitter.git
-````bash
+```bash
+$ git clone git@github.com:XadillaX/vjudge-submitter.git
+```
 
 You will see a new repo directory vjudge-submitter. You should rename it:
 
-````bash
-    mv vjudge-submitter nbut-vj-core
-````bash
+```bash
+$ mv vjudge-submitter nbut-vj-core
+```
 
 Then copy the test files to the project root directory:
 
-````bash
-    cd vjudge-submitter
-    cp test* ../../
-    cd ../../
-````bash
+```bash
+$ cd vjudge-submitter
+$ cp test* ../../
+$ cd ../../
+```
 
 Finally you can run the command below to test this project:
 
-    node test.js
+```bash
+$ node test.js
+```
