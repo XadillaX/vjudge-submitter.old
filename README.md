@@ -1,36 +1,26 @@
-# nbut-vjudger-module
+Welcome to this ***open-source project*** vjudge-submitter!
 
-The Virtual Judge core module of NODE.JS.
+## WHAT'S IT?
 
-## The Folder
+`vjudge-submitter` is short for ***Virtual Judge Submitter***.
 
-### lib
+### Virtual Judge
 
-#### util.js
+Virtual Judge is something like the Polymerization of [Online Judge](http://en.wikipedia.org/wiki/Online_judge).
 
-Some usefule functions here.
+The Virtual Judge will contain several Online Judge's problems and when you submit code to one problem, the backend of Virtual Judge will submit your code to the origin Online Judge and fetch the submission record status and return.
 
-#### node_modules
+### Virtual Judge Submitter
 
-Some third-part modules.
+This project is mainly for the people who is going to develop him/her self Virtual Judge.
 
-#### oj
+It gives you the unified API functions of each different Online Judges.
 
-The default Online Judge Impl modules here. And all of them are inherited from base.js.
+The APIs including `login`, `submit`, and `fetch result`. If you have some better ideas, maybe it will contain an API based on your idea!
 
-#### base.js
+You contribute to `vjudge-submitter` and of cause `vjudge-submitter` will help you to easy build a Virtual Judge core!
 
-The base class of the core module.
-
-#### test.cpp
-
-A test code for NBUTOJ.
-
-#### test.js
-
-You can run it to test this core module.
-
-## How To Build Up The Tester Project
+## HOW TO BUILD UP THE TEST PROJECCT?
 
 You should make a new directory:
 
@@ -71,3 +61,20 @@ Finally you can run the command below to test this project:
 ```bash
 $ node test.js
 ```
+
+## GUIDE NAVIGATION LINKS
+
+In this wiki, we will introduce three things:
+
++ [How to contribute a new OJ Submitter?](https://github.com/XadillaX/vjudge-submitter/wiki/How-to-contribute-a-new-OJ-Submitter%3F)
++ [How to use vjudge-submitter?](https://github.com/XadillaX/vjudge-submitter/wiki/How-to-use-vjudge-submitter%3F)
++ [How to build up the test project?](https://github.com/XadillaX/vjudge-submitter/wiki/How-to-build-up-the-tester-project%3F)
+
+## CONTACT
+
+If you want contribute to this project, you can fork it!
+
+And if you have some question, you can post it to [ISSUES](issues) or contact me:
+
+> + Email: admin#xcoder.in
+> + Website: http://xcoder.in
