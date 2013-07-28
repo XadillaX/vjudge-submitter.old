@@ -140,6 +140,7 @@ spider.post("http://judge.u-aizu.ac.jp/onlinejudge/", function(data, status, res
 
         spider.post("http://judge.u-aizu.ac.jp/onlinejudge/servlet/Submit", function(data, status, respheader) {
             if(data.indexOf("<font color=#ff000F><b>") !== -1) {
+                //console.log(data);
                 var pos1 = data.indexOf("<b>\n");
                 var pos2 = data.indexOf("\n</b>", pos1);
 
@@ -147,8 +148,10 @@ spider.post("http://judge.u-aizu.ac.jp/onlinejudge/", function(data, status, res
                 base.logger.error("Failed while submitting: " + msg);
                 return;
             } else if(data.indexOf("URL=http://judge.u-aizu.ac.jp/onlinejudge/status.jsp") !== -1) {
+                //console.log(data);
                 queryResult(cookie);
             } else {
+                //console.log(data);
                 base.logger.error("Failed while submitting: Unknown error.");
                 return;
             }

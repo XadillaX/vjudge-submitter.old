@@ -11,6 +11,29 @@ vj.setDefaultLogLevel("INFO");
 var username = "username";
 var password = "password";
 
+var aizu = vj.getSubmitter("aizu");
+aizu.login(username, password, function(status, msg, baseheader) {
+    if(!status) return;
+    //baseheader = this.getBaseHeader({}, { "cookie" : baseheader["cookie"] });
+
+    var code = "#include<stdio.h>\n\
+                int main(){\nwhile(1);\
+                printf(\"Hello World\\n\");\n\
+                return 0;\n\
+            }"
+    var code2 = "echo 'Hello World\\n';";
+    var code3 = "while(true);console.log('Hello World');";
+
+    this.submit("10000", "JavaScript", code3, baseheader, function(status, msg, baseheader) {
+        if(!status) return;
+
+        this.result(username, baseheader, function(status, msg, result) {
+            //console.log(result);
+            this.logger.info("------ The result is " + result["finalresult"]);
+        });
+    });
+});
+
 var lsu = vj.getSubmitter("lsu");
 lsu.login(username, password, function(status, msg, baseheader) {
     if(!status) return;
