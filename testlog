@@ -1,62 +1,72 @@
-"E:\Program Files\nodejs\node.exe" test.js
-[2013-07-28 17:28:31.332] [TRACE] GLOBAL - To get the submitter [aizu]
-[2013-07-28 17:28:31.336] [INFO] AIZU - Login AIZUOJ: [ http://judge.u-aizu.ac.jp/onlinejudge/ ]...
-[2013-07-28 17:28:31.339] [TRACE] GLOBAL - To get the submitter [lsu]
-[2013-07-28 17:28:31.341] [INFO] LSU - Login LSUOJ: [ http://acms.lsu.edu.cn:81/OnlineJudge/login?action=login ]...
-[2013-07-28 17:28:31.342] [TRACE] GLOBAL - To get the submitter [sysu]
-[2013-07-28 17:28:31.343] [INFO] SYSU - Login SYSU: [ http://soj.me/action.php?act=Login ]...
-[2013-07-28 17:28:31.344] [TRACE] GLOBAL - To get the submitter [nbut]
-[2013-07-28 17:28:31.346] [INFO] NBUT - Login NOJ: [ http://acm.nbut.edu.cn/user/chklogin.xhtml ]...
-[2013-07-28 17:28:31.346] [TRACE] GLOBAL - To get the submitter [nyist]
-[2013-07-28 17:28:31.347] [INFO] NYIST - Login NYIST: [ http://acm.nyist.net/JudgeOnline/dologin.php ]...
-[2013-07-28 17:28:31.348] [TRACE] GLOBAL - To get the submitter [foo]
-[2013-07-28 17:28:31.348] [ERROR] GLOBAL - Can't get the submitter [foo] : MODULE_NOT_FOUND
-[2013-07-28 17:28:31.348] [ERROR] INVLID SUBMITTER - You are going to log in an INVALID SUBMITTER.
-[2013-07-28 17:28:31.348] [WARN] GLOBAL - foo is an INVALID SUBMITTER.
-[2013-07-28 17:28:31.464] [INFO] NYIST - Logged in successfully.
-[2013-07-28 17:28:31.464] [INFO] NYIST - Submit code to NYIST: [ http://acm.nyist.net/JudgeOnline/submit.php?pid=1 ]...
-[2013-07-28 17:28:31.836] [INFO] SYSU - Logged in successfully.
-[2013-07-28 17:28:31.842] [INFO] SYSU - Submit code to SYSU: [ http://soj.me/action.php?act=Submit ]...
-[2013-07-28 17:28:31.853] [INFO] NYIST - Submit successfully.
-[2013-07-28 17:28:31.853] [INFO] NYIST - Query for result on NYIST OJ: [ http://acm.nyist.net/JudgeOnline/status.php?do=search&pid=&language=0&result=0&userid=XadillaX ]...
-[2013-07-28 17:28:31.869] [INFO] AIZU - Logged in successfully.
-[2013-07-28 17:28:31.887] [INFO] NBUT - Logged in successfully.
-[2013-07-28 17:28:31.890] [INFO] NBUT - Submit code to NOJ: [ http://acm.nbut.edu.cn/problem/submitok.xhtml ]...
-[2013-07-28 17:28:32.128] [INFO] SYSU - Submit successfully.
-[2013-07-28 17:28:32.128] [INFO] SYSU - Query for result on SYSU OJ: [ http://soj.me/status.php?username=xadillax ]...
-[2013-07-28 17:28:32.139] [INFO] AIZU - Submit successfully.
-[2013-07-28 17:28:32.139] [INFO] AIZU - Query for result on AIZU OJ: [ http://judge.u-aizu.ac.jp/onlinejudge/status.jsp ]...
-[2013-07-28 17:28:32.621] [INFO] LSU - Verifying log-in status...
-[2013-07-28 17:28:32.621] [INFO] LSU - Logged in successfully.
-[2013-07-28 17:28:32.621] [INFO] LSU - Submit code to LSU OJ: [ http://acms.lsu.edu.cn:81/OnlineJudge/submit ]...
-[2013-07-28 17:28:33.129] [INFO] LSU - Submit successfully.
-[2013-07-28 17:28:33.129] [INFO] LSU - Query for result on LSU OJ: [ http://acms.lsu.edu.cn:81/OnlineJudge/status?problem_id=&user_id=XadillaX&B1=Go ]...
-[2013-07-28 17:28:33.371] [INFO] SYSU - Try time: 1... [ Submission ID fetched : 2185201 ].
-[2013-07-28 17:28:33.559] [INFO] NBUT - Submit successfully.
-[2013-07-28 17:28:33.559] [INFO] NBUT - Query for result on NOJ: [ http://acm.nbut.edu.cn/problem/status.xhtml?page=1&username=XadillaX ]...
-[2013-07-28 17:28:33.791] [INFO] NYIST - Try time: 1... [ Result fetched ]
-[2013-07-28 17:28:33.791] [INFO] NYIST - ------ The result is Accepted
-[2013-07-28 17:28:34.154] [INFO] LSU - Try time: 1... [ Result fetched ]
-[2013-07-28 17:28:34.154] [INFO] LSU - ------ The result is Accepted
-[2013-07-28 17:28:34.539] [INFO] SYSU - Try time: 2... [ Result fetched ]
-[2013-07-28 17:28:34.539] [INFO] SYSU - ------ The result is Accepted
-[2013-07-28 17:28:34.843] [INFO] AIZU - Try time: 1... [ 201 records ] [ Record is still in pending : Running ]
-[2013-07-28 17:28:34.844] [INFO] AIZU - ------ The result is Running
-[2013-07-28 17:28:35.388] [INFO] NBUT - Try time: 1... [ Record is still in pending : Compiling ]
-[2013-07-28 17:28:37.026] [INFO] NBUT - Try time: 2... [ Record is still in pending : Compiling ]
-[2013-07-28 17:28:38.713] [INFO] NBUT - Try time: 3... [ Record is still in pending : Running ]
-[2013-07-28 17:28:38.989] [INFO] AIZU - Try time: 2... [ 201 records ] [ Record is still in pending : Running ]
-[2013-07-28 17:28:38.989] [INFO] AIZU - ------ The result is Running
-[2013-07-28 17:28:40.443] [INFO] NBUT - Try time: 4... [ Record is still in pending : Running ]
-[2013-07-28 17:28:42.212] [INFO] NBUT - Try time: 5... [ Result fetched ]
-[2013-07-28 17:28:42.212] [INFO] NBUT - ------ The result is Accepted
-[2013-07-28 17:28:43.433] [INFO] AIZU - Try time: 3... [ 201 records ] [ Record is still in pending : Running ]
-[2013-07-28 17:28:43.433] [INFO] AIZU - ------ The result is Running
-[2013-07-28 17:28:47.784] [INFO] AIZU - Try time: 4... [ 202 records ] [ Record is still in pending : Running ]
-[2013-07-28 17:28:47.784] [INFO] AIZU - ------ The result is Running
-[2013-07-28 17:28:51.652] [INFO] AIZU - Try time: 5... [ 201 records ] [ Record is still in pending : Running ]
-[2013-07-28 17:28:51.652] [INFO] AIZU - ------ The result is Running
-[2013-07-28 17:28:55.479] [INFO] AIZU - Try time: 6... [ 200 records ] [ Result fetched ]
-[2013-07-28 17:28:55.479] [INFO] AIZU - ------ The result is Time Limit Exceeded
-
-Process finished with exit code 0
+[2013-07-28 18:19:30.206] [TRACE] GLOBAL - To get the submitter [aizu]
+[2013-07-28 18:19:30.210] [INFO] AIZU - Login AIZUOJ: [ http://judge.u-aizu.ac.jp/onlinejudge/ ]...
+[2013-07-28 18:19:30.213] [TRACE] GLOBAL - To get the submitter [lsu]
+[2013-07-28 18:19:30.215] [INFO] LSU - Login LSUOJ: [ http://acms.lsu.edu.cn:81/OnlineJudge/login?action=login ]...
+[2013-07-28 18:19:30.216] [TRACE] GLOBAL - To get the submitter [sysu]
+[2013-07-28 18:19:30.217] [INFO] SYSU - Login SYSU: [ http://soj.me/action.php?act=Login ]...
+[2013-07-28 18:19:30.218] [TRACE] GLOBAL - To get the submitter [nbut]
+[2013-07-28 18:19:30.219] [INFO] NBUT - Login NOJ: [ http://acm.nbut.edu.cn/user/chklogin.xhtml ]...
+[2013-07-28 18:19:30.220] [TRACE] GLOBAL - To get the submitter [nyist]
+[2013-07-28 18:19:30.221] [INFO] NYIST - Login NYIST: [ http://acm.nyist.net/JudgeOnline/dologin.php ]...
+[2013-07-28 18:19:30.222] [TRACE] GLOBAL - To get the submitter [foo]
+[2013-07-28 18:19:30.222] [ERROR] GLOBAL - Can't get the submitter [foo] : MODULE_NOT_FOUND
+[2013-07-28 18:19:30.222] [ERROR] INVLID SUBMITTER - You are going to log in an INVALID SUBMITTER.
+[2013-07-28 18:19:30.222] [WARN] GLOBAL - foo is an INVALID SUBMITTER.
+[2013-07-28 18:19:30.340] [INFO] NYIST - Logged in successfully.
+[2013-07-28 18:19:30.341] [INFO] NYIST - Submit code to NYIST: [ http://acm.nyist.net/JudgeOnline/submit.php?pid=1 ]...
+[2013-07-28 18:19:30.390] [INFO] SYSU - Logged in successfully.
+[2013-07-28 18:19:30.391] [INFO] SYSU - Submit code to SYSU: [ http://soj.me/action.php?act=Submit ]...
+[2013-07-28 18:19:30.561] [INFO] NBUT - Logged in successfully.
+[2013-07-28 18:19:30.564] [INFO] NBUT - Submit code to NOJ: [ http://acm.nbut.edu.cn/problem/submitok.xhtml ]...
+[2013-07-28 18:19:30.642] [INFO] SYSU - Submit successfully.
+[2013-07-28 18:19:30.642] [INFO] SYSU - Query for result on SYSU OJ: [ http://soj.me/status.php?username=xadillax ]...
+[2013-07-28 18:19:30.688] [INFO] AIZU - Logged in successfully.
+[2013-07-28 18:19:30.688] [INFO] AIZU - Submit code to AIZU OJ: [ http://judge.u-aizu.ac.jp/onlinejudge/servlet/Submit ]...
+[2013-07-28 18:19:30.861] [INFO] NYIST - Submit successfully.
+[2013-07-28 18:19:30.861] [INFO] NYIST - Query for result on NYIST OJ: [ http://acm.nyist.net/JudgeOnline/status.php?do=search&pid=&language=0&result=0&userid=XadillaX ]...
+[2013-07-28 18:19:30.909] [INFO] AIZU - Submit successfully.
+[2013-07-28 18:19:30.909] [INFO] AIZU - Query for result on AIZU OJ: [ http://judge.u-aizu.ac.jp/onlinejudge/status.jsp ]...
+[2013-07-28 18:19:31.104] [INFO] LSU - Verifying log-in status...
+[2013-07-28 18:19:31.104] [INFO] LSU - Logged in successfully.
+[2013-07-28 18:19:31.105] [INFO] LSU - Submit code to LSU OJ: [ http://acms.lsu.edu.cn:81/OnlineJudge/submit ]...
+[2013-07-28 18:19:31.115] [INFO] NBUT - Submit successfully.
+[2013-07-28 18:19:31.115] [INFO] NBUT - Query for result on NOJ: [ http://acm.nbut.edu.cn/problem/status.xhtml?page=1&username=XadillaX ]...
+[2013-07-28 18:19:31.461] [INFO] LSU - Submit successfully.
+[2013-07-28 18:19:31.461] [INFO] LSU - Query for result on LSU OJ: [ http://acms.lsu.edu.cn:81/OnlineJudge/status?problem_id=&user_id=XadillaX&B1=Go ]...
+[2013-07-28 18:19:31.923] [INFO] SYSU - Try time: 1... [ Submission ID fetched : 2185217 ].
+[2013-07-28 18:19:32.079] [INFO] AIZU - Try time: 1... [ 201 records ] [ Record is still in pending : Running ]
+[2013-07-28 18:19:32.079] [INFO] AIZU - ------ The result is Running
+[2013-07-28 18:19:32.159] [INFO] LSU - Try time: 1... [ Result fetched ]
+[2013-07-28 18:19:32.159] [INFO] LSU - ------ The result is Accepted
+[2013-07-28 18:19:32.659] [INFO] NBUT - Try time: 1... [ Record is still in pending : Compiling ]
+[2013-07-28 18:19:33.093] [INFO] SYSU - Try time: 2... [ Result fetched ]
+[2013-07-28 18:19:33.093] [INFO] SYSU - ------ The result is Accepted
+[2013-07-28 18:19:34.208] [INFO] NBUT - Try time: 2... [ Record is still in pending : Compiling ]
+[2013-07-28 18:19:34.276] [INFO] AIZU - Try time: 2... [ 201 records ] [ Record is still in pending : Running ]
+[2013-07-28 18:19:34.276] [INFO] AIZU - ------ The result is Running
+[2013-07-28 18:19:35.204] [INFO] NYIST - Try time: 1... [ Record is still in pending : <a href="CE.php?runid=525027">判题中...</a> ]
+[2013-07-28 18:19:35.204] [INFO] NYIST - ------ The result is Pending
+[2013-07-28 18:19:35.739] [INFO] NBUT - Try time: 3... [ Record is still in pending : Compiling ]
+[2013-07-28 18:19:36.483] [INFO] AIZU - Try time: 3... [ 201 records ] [ Record is still in pending : Running ]
+[2013-07-28 18:19:36.484] [INFO] AIZU - ------ The result is Running
+[2013-07-28 18:19:37.170] [INFO] NYIST - Try time: 2... [ Result fetched ]
+[2013-07-28 18:19:37.171] [INFO] NYIST - ------ The result is Accepted
+[2013-07-28 18:19:37.256] [INFO] NBUT - Try time: 4... [ Record is still in pending : Running ]
+[2013-07-28 18:19:38.783] [INFO] NBUT - Try time: 5... [ Result fetched ]
+[2013-07-28 18:19:38.783] [INFO] NBUT - ------ The result is Accepted
+[2013-07-28 18:19:38.789] [INFO] AIZU - Try time: 4... [ 201 records ] [ Record is still in pending : Running ]
+[2013-07-28 18:19:38.790] [INFO] AIZU - ------ The result is Running
+[2013-07-28 18:19:40.978] [INFO] AIZU - Try time: 5... [ 201 records ] [ Record is still in pending : Running ]
+[2013-07-28 18:19:40.978] [INFO] AIZU - ------ The result is Running
+[2013-07-28 18:19:43.103] [INFO] AIZU - Try time: 6... [ 201 records ] [ Record is still in pending : Running ]
+[2013-07-28 18:19:43.103] [INFO] AIZU - ------ The result is Running
+[2013-07-28 18:19:45.264] [INFO] AIZU - Try time: 7... [ 201 records ] [ Record is still in pending : Running ]
+[2013-07-28 18:19:45.264] [INFO] AIZU - ------ The result is Running
+[2013-07-28 18:19:47.429] [INFO] AIZU - Try time: 8... [ 201 records ] [ Record is still in pending : Running ]
+[2013-07-28 18:19:47.429] [INFO] AIZU - ------ The result is Running
+[2013-07-28 18:19:49.514] [INFO] AIZU - Try time: 9... [ 201 records ] [ Record is still in pending : Running ]
+[2013-07-28 18:19:49.514] [INFO] AIZU - ------ The result is Running
+[2013-07-28 18:19:51.663] [INFO] AIZU - Try time: 10... [ 201 records ] [ Record is still in pending : Running ]
+[2013-07-28 18:19:51.663] [INFO] AIZU - ------ The result is Running
+[2013-07-28 18:19:53.947] [INFO] AIZU - Try time: 11... [ 200 records ] [ Result fetched ]
+[2013-07-28 18:19:53.947] [INFO] AIZU - ------ The result is Time Limit Exceeded

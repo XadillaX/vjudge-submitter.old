@@ -192,6 +192,10 @@ aizu.prototype.submit = function(problemID, language, code, baseheader, callback
     var reqheader = this.getBaseHeader(data, { "cookie" : baseheader["cookie"] });
     var par = this;
 
+    this.logger.info("Submit code to AIZU OJ: [ " + url + " ]...");
+    this.logger.trace("Querystring: [ " + base.util.stringifyData(data) + " ]...");
+    this.logger.trace("Request header: [ " + JSON.stringify(reqheader) + " ]...");
+
     this.spider.post(url, function(data, status, respheader) {
         par.logger.trace("Page status: " + status + ".");
 
