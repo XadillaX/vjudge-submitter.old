@@ -77,6 +77,7 @@ var loginheader = base.getBaseHeader(accountdata);
 
 base.logger.info("开始登录");
 spider.post("http://cpp.zjut.edu.cn/SignIn.aspx?ReturnUrl=%2fDefault.aspx", function(data, status, respheader) {
+    //console.log(data);
     if(data.indexOf('<h2>Object moved to <a href="%2fDefault.aspx">here</a>.</h2>') === -1) {
         var text = '<td align="center" colspan="2" style="color: red">';
         var pos1 = data.indexOf(text);
@@ -89,6 +90,7 @@ spider.post("http://cpp.zjut.edu.cn/SignIn.aspx?ReturnUrl=%2fDefault.aspx", func
         return;
     }
 
+    console.log(respheader["set-cookie"]);
     var cookies = respheader["set-cookie"][0].substr(0, respheader["set-cookie"][0].indexOf(" ")) +
         respheader["set-cookie"][1].substr(0, respheader["set-cookie"][1].indexOf(" "));
 

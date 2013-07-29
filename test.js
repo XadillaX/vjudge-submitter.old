@@ -11,6 +11,20 @@ vj.setDefaultLogLevel("INFO");
 var username = "username";
 var password = "password";
 
+var zjut = vj.getSubmitter("zjut");
+zjut.login(username, password, function(status, msg, baseheader) {
+    if(!status) return;
+    //console.log(baseheader);
+
+    var code = "#include<iostream>\nusing namespace std;\nint main(){int a, b; while(cin >> a >> b) { if(a == 0 && b == 0) break; cout << a + b << endl; } return 0;}";
+    this.submit("1000", "C++", code, baseheader, function(status, msg, baseheader) {
+        this.result(username, baseheader, function(status, msg, result) {
+            this.logger.info("------ The result is " + result["finalresult"]);
+            //console.log(result);
+        });
+    });
+});
+
 var aizu = vj.getSubmitter("aizu");
 aizu.login(username, password, function(status, msg, baseheader) {
     if(!status) return;
