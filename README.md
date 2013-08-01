@@ -6,13 +6,13 @@ Welcome to this ***open-source project*** vjudge-submitter!
 
 `vjudge-submitter` is short for ***Virtual Judge Submitter***.
 
-### Virtual Judge
+### VIRTUAL JUDGE
 
 Virtual Judge is something like the Polymerization of [Online Judge](http://en.wikipedia.org/wiki/Online_judge).
 
 The Virtual Judge will contain several Online Judge's problems and when you submit code to one problem, the backend of Virtual Judge will submit your code to the origin Online Judge and fetch the submission record status and return.
 
-### Virtual Judge Submitter
+### VIRTUAL JUDGE SUBMITTER
 
 This project is mainly for the people who is going to develop him/her self Virtual Judge.
 
@@ -21,6 +21,12 @@ It gives you the unified API functions of each different Online Judges.
 The APIs including `login`, `submit`, and `fetch result`. If you have some better ideas, maybe it will contain an API based on your idea!
 
 You contribute to `vjudge-submitter` and of cause `vjudge-submitter` will help you to easy build a Virtual Judge core!
+
+### ANOTHER IMPORTANT PROJECT OF VJLIB
+
+It's a virtual judge spider. Coded by `NODE.JS` either. It's to fetch the content of each problem in different Online Judge Systems.
+
+You can view and fork the project at https://github.com/XadillaX/vjudge-description-spider.
 
 ## HOW TO BUILD UP THE TEST PROJECCT?
 
