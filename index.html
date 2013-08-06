@@ -153,6 +153,60 @@
     <span class="nx">finalresult</span> <span class="o">:</span> <span class="s2">"The result after formatting"</span>
 <span class="p">};</span>
 </pre></div>
+
+<h4>
+<a name="a-simplest-example" class="anchor" href="#a-simplest-example"><span class="octicon octicon-link"></span></a>A SIMPLEST EXAMPLE</h4>
+
+<p>You can refer to the simplest example:</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">vjs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"vjudge-submitter"</span><span class="p">);</span>
+<span class="nx">vjs</span><span class="p">.</span><span class="nx">setDefaultLogLevel</span><span class="p">(</span><span class="s2">"INFO"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">username</span> <span class="o">=</span> <span class="s2">"username"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">password</span> <span class="o">=</span> <span class="s2">"password"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">code</span> <span class="o">=</span> <span class="s2">"blahblah..."</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">nbut</span> <span class="o">=</span> <span class="nx">vjs</span><span class="p">.</span><span class="nx">getSubmitter</span><span class="p">(</span><span class="s2">"nbut"</span><span class="p">);</span>
+<span class="nx">nbut</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span> <span class="nx">password</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">status</span><span class="p">,</span> <span class="nx">msg</span><span class="p">,</span> <span class="nx">baseheader</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Something goes wrong.</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">submit</span><span class="p">(</span><span class="s2">"1000"</span><span class="p">,</span> <span class="s2">"C++"</span><span class="p">,</span> <span class="nx">code</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">status</span><span class="p">,</span> <span class="nx">msg</span><span class="p">,</span> <span class="nx">baseheader</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Something goes wrong</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">result</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span> <span class="s2">"1000"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">status</span><span class="p">,</span> <span class="nx">msg</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Something goes wrong</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">status</span> <span class="o">&amp;&amp;</span> <span class="kc">null</span> <span class="o">===</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
+                <span class="k">return</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="c1">// PENDING</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="s2">"The code status is still [ "</span> <span class="o">+</span> <span class="nx">result</span><span class="p">[</span><span class="s2">"finalresult"</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" ]. Please wait."</span><span class="p">;</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+                <span class="k">return</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="s2">"The code status is finished in "</span> <span class="o">+</span> <span class="nx">result</span><span class="p">[</span><span class="s2">"time"</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"ms and "</span> <span class="o">+</span> <span class="nx">result</span><span class="p">[</span><span class="s2">"memo"</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"K with [ "</span> <span class="o">+</span> <span class="nx">result</span><span class="p">[</span><span class="s2">"finalresult"</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" ]"</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+
+            <span class="c1">// The status is COMPILATION ERROR</span>
+            <span class="k">if</span><span class="p">(</span><span class="kc">undefined</span> <span class="o">!==</span> <span class="nx">result</span><span class="p">[</span><span class="s2">"ceinfo"</span><span class="p">])</span> <span class="p">{</span>
+                <span class="nx">text</span> <span class="o">=</span> <span class="s2">"And the CE information is:\n"</span><span class="p">;</span>
+                <span class="nx">text</span> <span class="o">+=</span> <span class="nx">result</span><span class="p">[</span><span class="s2">"ceinfo"</span><span class="p">];</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span> 
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
       </section>
     </div>
 
