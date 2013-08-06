@@ -1,57 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
     <title>VJudge Submitter by XadillaX</title>
-  </head>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+  </head>
   <body>
 
-    <header>
-      <div class="container">
+      <header>
         <h1>VJudge Submitter</h1>
-        <h2>The submitter library for NODE.JS to work with Virtual Judge System.</h2>
+        <p>The submitter library for NODE.JS to work with Virtual Judge System.</p>
+      </header>
 
-        <section id="downloads">
-          <a href="https://github.com/XadillaX/vjudge-submitter/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/XadillaX/vjudge-submitter/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/XadillaX/vjudge-submitter" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+      <div id="banner">
+        <span id="logo"></span>
 
-    <div class="container">
-      <section id="main_content">
+        <a href="https://github.com/XadillaX/vjudge-submitter" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/XadillaX/vjudge-submitter/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/XadillaX/vjudge-submitter/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
         <h3>
 <a name="welcome-to-use-vjudge-submitter" class="anchor" href="#welcome-to-use-vjudge-submitter"><span class="octicon octicon-link"></span></a>WELCOME TO USE VJUDGE SUBMITTER</h3>
+
+<h4>
+<a name="whats-this" class="anchor" href="#whats-this"><span class="octicon octicon-link"></span></a>WHAT'S THIS</h4>
+
+<p><strong><em>Virtual Judge</em></strong> is something like the Polymerization of <strong><em>Online Judge</em></strong>.</p>
+
+<p>The <strong><em>Virtual Judge</em></strong> will contain several <strong><em>Online Judge</em></strong>'s problems and when you submit code to one problem, the backend of <strong><em>Virtual Judge</em></strong> will submit your code to the origin <strong><em>Online Judge</em></strong> and fetch the submission record status and return.</p>
+
+<p>This project is mainly for the people who is going to develop him/her self <strong><em>Virtual Judge</em></strong>.</p>
+
+<p>It gives you the unified API functions of each different <strong><em>Online Judges</em></strong>.</p>
+
+<p>The APIs including login, submit, and fetch result. If you have some better ideas, maybe it will contain an API based on your idea!</p>
+
+<p>You contribute to <code>vjudge-submitter</code> and of cause <code>vjudge-submitter</code> will help you to easy build a Virtual Judge core!</p>
+
+<h4>
+<a name="preparation" class="anchor" href="#preparation"><span class="octicon octicon-link"></span></a>PREPARATION</h4>
 
 <p>It's easy to use <strong><em>VJudge Submitter</em></strong> in your own <strong><em>Virtual Judge</em></strong> project.</p>
 
 <p>First of all, come to your project directory and create a new directory if it not exists yet:</p>
 
-<div class="highlight"><pre>mkdir node_modules
+<div class="highlight"><pre><span class="nv">$ </span>mkdir node_modules
 </pre></div>
 
 <p>And then you can clone the <strong><em>VJudge Submitter</em></strong> to that directory or uncompress it via the package you downloaded:</p>
 
-<div class="highlight"><pre>git clone https://github.com/XadillaX/vjudge-submitter.git
+<div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/XadillaX/vjudge-submitter.git
 </pre></div>
 
 <p>or</p>
 
-<div class="highlight"><pre>tar zxf filename.tar.gz
+<div class="highlight"><pre><span class="nv">$ </span>tar zxf filename.tar.gz
 </pre></div>
 
 <p>Congratulations! Now you can use it in your own project!</p>
 
 <h3>
-<a name="how-to-use-it" class="anchor" href="#how-to-use-it"><span class="octicon octicon-link"></span></a>HOW TO USE IT?</h3>
+<a name="how-to-use-it" class="anchor" href="#how-to-use-it"><span class="octicon octicon-link"></span></a>HOW TO USE IT</h3>
 
 <h4>
 <a name="create" class="anchor" href="#create"><span class="octicon octicon-link"></span></a>CREATE</h4>
@@ -207,9 +236,44 @@
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
-      </section>
-    </div>
 
+<h3>
+<a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a>CONTACT</h3>
+
+<p>Have a question?</p>
+
+<ul>
+<li>Email: <a href="mailto:admin#xcoder.in">admin#xcoder.in</a>
+</li>
+<li>Issue: <a href="https://github.com/XadillaX/vjudge-submitter/issues">On GitHub</a>
+</li>
+</ul><h3>
+<a name="contribute-to-this-project" class="anchor" href="#contribute-to-this-project"><span class="octicon octicon-link"></span></a>CONTRIBUTE TO THIS PROJECT</h3>
+
+<p>Anyone and everyone is welcome to contribute. If you want to develop some Online Judge Support, you can do as the following link: <a href="https://github.com/XadillaX/vjudge-submitter/wiki/How-to-contribute-a-new-OJ-Submitter%3F">How to contribute a new OJ Submitter?</a></p>
+
+<h3>
+<a name="authors" class="anchor" href="#authors"><span class="octicon octicon-link"></span></a>AUTHORS</h3>
+
+<ul>
+<li><a href="https://github.com/XadillaX">@XadillaX</a></li>
+</ul><p>Thanks for assistance and contributions:</p>
+
+<blockquote>
+<p>EMPTY YET</p>
+</blockquote>
+
+<h3>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>LICENSE</h3>
+
+<p>I DON'T KNOW YET. WHO CAN HELP ME?</p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/XadillaX">XadillaX</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
 </html>
