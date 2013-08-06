@@ -95,7 +95,64 @@
 <strong>msg</strong>: it will be an empty string when successfully and it will be the <strong>error message</strong> when failed.</li>
 <li>
 <strong>baseheader</strong>: this parameter will be used in <code>submit</code> or <code>result</code> function. Most importantly, this parameter includes the cookie information.</li>
+</ul><h4>
+<a name="submit" class="anchor" href="#submit"><span class="octicon octicon-link"></span></a>SUBMIT</h4>
+
+<p>Refer to the code below:</p>
+
+<div class="highlight"><pre><span class="nx">foo</span><span class="p">.</span><span class="nx">submit</span><span class="p">(</span><span class="nx">problemID</span><span class="p">,</span> <span class="nx">language</span><span class="p">,</span> <span class="nx">code</span><span class="p">,</span> <span class="nx">baseheader</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+</pre></div>
+
+<blockquote>
+<p><strong>Hint</strong>: The <code>baseheader</code> here is the <code>baseheader</code> passed from the callback function of <code>login</code> function.</p>
+</blockquote>
+
+<p>And the callback function of <code>submit</code> should be like:</p>
+
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">callback</span><span class="p">(</span><span class="nx">status</span><span class="p">,</span> <span class="nx">msg</span><span class="p">,</span> <span class="nx">baseheader</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//blahblah...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>It's similar to the callback function of <code>login</code> callback function's.</p>
+
+<h4>
+<a name="result" class="anchor" href="#result"><span class="octicon octicon-link"></span></a>RESULT</h4>
+
+<p>This function is to fetch the running record of <strong><em>last</em></strong> submission. (Because we assume one <strong>Virtual Judge Account</strong> just doing one thing at one moment)</p>
+
+<div class="highlight"><pre><span class="nx">foo</span><span class="p">.</span><span class="nx">result</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span> <span class="nx">baseheader</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+</pre></div>
+
+<p>Because we would like to fetch the <code>COMPILATION_ERROR</code> if the record is that, we must logged in. As a result, we should pass the cookie information into the function - that is the <code>baseheader</code>.</p>
+
+<p>And the callback function should be written like:</p>
+
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">callback</span><span class="p">(</span><span class="nx">status</span><span class="p">,</span> <span class="nx">msg</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//blahblah...</span>
+<span class="p">}</span>
+</pre></div>
+
+<blockquote>
+<p><strong>NOTE</strong>: This callback maybe called several times.</p>
+
+<ul>
+<li>When the result is something like <code>COMPILING</code>, <code>RUNNING</code>, <code>QUEUING</code>, etc, the callback function will pass <code>false</code>, msg and the result is a <code>result object</code>.</li>
+<li>When the fetching is wrong like <code>CONNECTION ERROR</code>, etc, the callback function will pass <code>false</code>, msg and the result is <code>null</code>. (It often happened when the submitter tries too many times but can't get the right information)</li>
+<li>When the fetching is right, the callback function will pass <code>true</code>, msg and the result is a <code>result object</code>.</li>
 </ul>
+</blockquote>
+
+<p>The so-called <code>result object</code> is something like:</p>
+
+<div class="highlight"><pre><span class="nx">result</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">runid</span>    <span class="o">:</span> <span class="s2">"The running id"</span><span class="p">,</span>
+    <span class="nx">time</span>     <span class="o">:</span> <span class="s2">"The running time"</span><span class="p">,</span>
+    <span class="nx">memo</span>     <span class="o">:</span> <span class="s2">"The running memory"</span><span class="p">,</span>
+    <span class="nx">result</span>   <span class="o">:</span> <span class="s2">"The result in that oj"</span><span class="p">,</span>
+    <span class="nx">finalresult</span> <span class="o">:</span> <span class="s2">"The result after formatting"</span>
+<span class="p">};</span>
+</pre></div>
       </section>
     </div>
 
