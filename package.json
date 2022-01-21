@@ -4,7 +4,7 @@
   "description": "NBUT VJ Submitter",
   "main": "index.js",
   "dependencies": {
-    "log4js": "~0.6.6",
+    "log4js": "~6.4.0",
     "nodegrass": "~0.0.1"
   },
   "devDependencies": {},
